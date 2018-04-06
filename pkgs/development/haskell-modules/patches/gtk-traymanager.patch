@@ -1,0 +1,25 @@
+diff --git a/gtk-traymanager.cabal b/gtk-traymanager.cabal
+index 03ecefd..fe51faf 100644
+--- a/gtk-traymanager.cabal
++++ b/gtk-traymanager.cabal
+@@ -29,7 +29,7 @@ library
+   hs-source-dirs: src
+   c-sources: src/c/eggtraymanager.c, src/c/eggmarshalers.c, src/c/gdk-helper.c
+   ghc-options: -Wall
+-  cc-options: -g
++  cc-options: -g -Wno-deprecated-declarations
+
+ source-repository head
+   type: git
+diff --git a/src/c/eggtraymanager.c b/src/c/eggtraymanager.c
+index 02f74a8..b2c32d1 100644
+--- a/src/c/eggtraymanager.c
++++ b/src/c/eggtraymanager.c
+@@ -20,6 +20,7 @@
+ #include <string.h>
+ #include <gdk/gdkx.h>
+ #include <gtk/gtk.h>
++#include <gtk/gtkx.h>
+ #include "eggtraymanager.h"
+ #include "eggmarshalers.h"
+ #include "gdk-helper.h"

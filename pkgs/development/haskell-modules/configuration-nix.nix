@@ -497,4 +497,6 @@ self: super: builtins.intersectAttrs super {
   LDAP = dontCheck (overrideCabal super.LDAP (drv: {
     librarySystemDepends = drv.librarySystemDepends or [] ++ [ pkgs.cyrus_sasl.dev ];
   }));
+
+  gtk-traymanager = appendPatch super.gtk-traymanager ./patches/gtk-traymanager.patch;
 }
