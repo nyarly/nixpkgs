@@ -499,4 +499,5 @@ self: super: builtins.intersectAttrs super {
   }));
 
   gtk-traymanager = appendPatch super.gtk-traymanager ./patches/gtk-traymanager.patch;
+  taffybar = dontHaddock super.taffybar;
 }
