@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, coreutils, utillinux,
+{ stdenv, autoreconfHook, fetchurl, coreutils, utillinux,
   nettools, kbd, bc, which, gnused, gnugrep,
   groff, man-db, getent, libiconv, pcre2,
   gettext, ncurses, python3
@@ -99,8 +99,11 @@ let
       sha256 = "0nhc3yc5lnnan7zmxqqxm07rdpwjww5ijy45ll2njdc6fnfb2az4";
     };
 
+    patches = [ ./wcwidth.patch ];
+
+    nativeBuildInputs = [ autoreconfHook ];
     buildInputs = [ ncurses libiconv pcre2 ];
-    configureFlags = [ "--without-included-pcre2" ];
+    configureFlags = [ "--without-included-pcre2" "--disable-internal-wcwidth"];
 
     # Required binaries during execution
     # Python: Autocompletion generated from manpages and config editing
