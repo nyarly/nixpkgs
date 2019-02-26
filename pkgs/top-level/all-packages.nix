@@ -2292,6 +2292,8 @@ in
 
   diction = callPackage ../tools/text/diction { };
 
+  diecut = callPackage ../development/tools/diecut { };
+
   diffoscope = callPackage ../tools/misc/diffoscope {
     jdk = jdk8;
   };
