@@ -67,6 +67,11 @@ stdenv.mkDerivation rec {
       --replace /usr/bin/dconf ${gnome3.dconf}/bin/dconf
   '';
 
+  installPhase = ''
+    mkdir -p $out
+    cp -a * $out
+  '';
+
 
   meta = with stdenv.lib; {
     homepage = https://support.google.com/a/users/answer/9018161?hl=en;
