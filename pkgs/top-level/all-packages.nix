@@ -26590,6 +26590,8 @@ in
 
   chrome-token-signing = libsForQt5.callPackage ../tools/security/chrome-token-signing {};
 
+  chrome-endpoint-verification = callPackage ../tools/security/chrome-endpoint-verification {};
+
   NSPlist = callPackage ../development/libraries/NSPlist {};
 
   PlistCpp = callPackage ../development/libraries/PlistCpp {};
